@@ -20,15 +20,10 @@ Use the model to structure and review a pairwise test model by default. Always u
 ### 1. Clarify the requested coverage
 
 - Extract the test objective, factors, levels, requested coverage strength, optional constraints, and notable exclusions.
-- Default to pairwise coverage when the user does not specify the interaction strength.
-- Use n-wise coverage only when the user explicitly asks for `3-wise`, `4-wise`, `n-wise`, `t-way`, or similar.
-- Call out the cost tradeoff when moving beyond pairwise, because stronger interaction coverage usually expands the generated set.
-- Ask for missing factors, levels, or constraint rules before generating combinations.
-- Treat `suspected constraints` as review items, not executable rules, unless the user confirms them or the source material makes them explicit.
-- Keep the input scope on explicit factors, levels, and optional explicit constraints. Do not make reverse-engineering from existing cases, prose narratives, or spreadsheets the main workflow.
-- Steer toward pairwise generation when the user asks for combinations broadly and exhaustive coverage is likely too large.
-- If the user asks for exhaustive enumeration, call out the likely explosion in case count and offer pairwise coverage unless exhaustive enumeration is clearly intended.
-- Avoid forcing this workflow onto requests that are really about exploratory testing or non-combinatorial test design.
+- Default to pairwise coverage unless the user explicitly asks for stronger `3-wise`, `4-wise`, `n-wise`, `t-way`, or similar coverage.
+- Call out the case-count tradeoff when the user asks for stronger or exhaustive coverage, and steer toward pairwise generation when exhaustive enumeration is likely too large.
+- Ask for missing factors, levels, or constraint rules before generating combinations, and treat `suspected constraints` as review items until the user confirms them or the source material makes them explicit.
+- Keep the workflow focused on explicit combinatorial inputs, and avoid forcing it onto reverse-engineering tasks, exploratory testing, or non-combinatorial test design.
 
 ### 2. Build a PICT model
 
