@@ -6,7 +6,7 @@
 
 ## Available Skills
 
-TBD
+- [`design-pairwise-tests`](./design-pairwise-tests/SKILL.md): Design pairwise and stronger t-way test patterns with deterministic `pict-cli` generation from explicit factors, levels, and optional constraints.
 
 ## Installation
 
