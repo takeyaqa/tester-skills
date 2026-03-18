@@ -33,10 +33,11 @@ Use the model to structure and review a pairwise test model by default. Always u
 ### 2. Build a PICT model
 
 - Normalize the user input into one factor per line.
-- Prefer short ASCII-safe identifiers for factors and levels when punctuation, whitespace, or multilingual labels would make the model brittle.
 - Keep a mapping back to the original business labels whenever identifiers are normalized.
 - Encode only explicit constraints or direct domain implications. Treat constraints as optional support around the pairwise-first model, not as the primary purpose of the skill. Do not invent business rules.
 - When writing constraints, follow [references/pict-constraints-grammar.md](references/pict-constraints-grammar.md).
+- For `pict-cli` execution, write string values in constraints with double quotes. Use `IF [Browser] = "Safari" THEN [OS] = "macOS";`, not an unquoted string form.
+- When using `IN { ... }` or `NOT IN { ... }`, quote each string value inside the set: `IF [Browser] = "Safari" THEN [OS] IN {"macOS", "iOS"};`.
 - Keep the model readable enough that the user can review it before execution.
 - If the source data is incomplete, show which candidate constraints were left out of the executable model and why.
 
@@ -48,20 +49,18 @@ Browser: Chrome, Edge, Safari
 AuthMode: Password, SSO
 Locale: en, ja
 
-IF [Browser] = Safari THEN [OS] = macOS;
+IF [Browser] = "Safari" THEN [OS] = "macOS";
 ```
-
-If the exact constraint syntax is uncertain, check the tool help or the bundled grammar reference before treating the model as final. For the constraint grammar used by this skill, read [references/pict-constraints-grammar.md](references/pict-constraints-grammar.md).
 
 ### 3. Run `pict-cli`
 
 - This step is mandatory for any request that asks for concrete combinations or claims about pairwise or n-wise coverage.
-- Write the model to a workspace file when execution is needed.
 - Use pairwise generation by default.
 - If the user explicitly asks for stronger coverage, check the current `pict-cli` help or documentation for the correct way to request the required n-wise or t-way strength before running the command.
 - Run `npx pict-cli <model-file>`.
-- When file creation is unnecessary or piping is more convenient, send the model through stdin with `npx pict-cli -`.
-- Example: `cat model.txt | npx pict-cli -`
+  - When file creation is unnecessary or piping is more convenient, send the model through stdin with `npx pict-cli -`.
+    - Example: `print <model-text> | npx pict-cli -`
+- For constraint-heavy models, prefer a quick validation run with the exact quoted constraint text before presenting the final combinations.
 - Treat the CLI output as the only valid source of truth for generated combinations.
 - Keep the exact model text that was executed so the result can be audited or rerun.
 - If the command fails, inspect the error, fix the model, and rerun instead of fabricating output.
