@@ -1,0 +1,23 @@
+{
+  "skill_name": "design-pairwise-tests",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want to create a pairwise test matrix for a user profile settings feature.\n\nPlease use these factors and levels:\n\n- Account type: Personal, Team, Enterprise\n- Theme: Light, Dark, System\n- Language: en, ja, fr\n- Time zone: JST, PST, CET\n- Notification frequency: Immediate, DailyDigest, WeeklyDigest\n- Sign-in method: Password, SSO\n\nPlease organize the factors and levels clearly, create a reviewable PICT model, and provide candidate combinations.",
+      "expected_output": "State that the requested coverage strength is pairwise, organize the explicit factors and levels into a clear, reviewable PICT model, and provide deterministic pairwise candidate combinations generated with pict-cli. If pict-cli cannot run, return the reviewed model and clearly state that no combinations were generated.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I want to design pairwise combination tests for a login feature.\nHere are the conditions I have in mind.\n\n- OS: Windows 11, macOS 14, iOS 18, Android 15\n- Browser/App: Chrome, Edge, Safari, Native App\n- Authentication method: Password, SSO, Passkey\n- Network: Wi-Fi, 4G, After offline recovery\n- Language: ja, en\n\nThe constraints are:\n- Safari is only available on macOS or iOS\n- Edge is only available on Windows\n- Passkey is supported only on Chrome, Safari, and the Native App\n- After offline recovery applies only to the Native App\n\nUsing these conditions, first organize the factors / levels / constraints, then create a PICT model, and if possible, also provide candidate combinations. Please clearly point out any ambiguous areas.",
+      "expected_output": "State that the requested coverage strength is pairwise, extract factors, levels, and explicit constraints, present a reviewable PICT model, and provide deterministic pairwise candidate combinations generated with pict-cli while calling out any ambiguity. If pict-cli cannot run, return the reviewed model and clearly state that no combinations were generated.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I need 3-wise interaction coverage for a payment settings feature.\n\nPlease use these factors and levels:\n\n- Country: JP, US, DE\n- Currency: JPY, USD, EUR\n- Payment method: CreditCard, PayPal, ApplePay, BankTransfer\n- Membership type: Guest, Member, Premium\n- Device: Desktop, iPhone, Android\n- Tax calculation: Internal, External\n\nThe explicit constraints are:\n- JP supports only JPY, US supports only USD, and DE supports only EUR\n- ApplePay is available only on iPhone\n- BankTransfer is not available for Guest users\n- PayPal is not supported for Premium users\n- External tax applies only to DE\n\nPlease build a reviewable PICT model and generate the combinations for the requested 3-wise coverage.",
+      "expected_output": "State that the requested coverage strength is 3-wise, organize the explicit factors, levels, and constraints into a reviewable PICT model, and provide deterministic 3-wise candidate combinations generated with pict-cli. If pict-cli cannot run or the required 3-wise option is unavailable, return the reviewed model and clearly state that no combinations were generated.",
+      "files": []
+    }
+  ]
+}
