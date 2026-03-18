@@ -15,7 +15,6 @@
 *.sln
 *.sw?
 
-
 # Agents
 .claude/
 .codex/
