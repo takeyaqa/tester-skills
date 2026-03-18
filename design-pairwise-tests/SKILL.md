@@ -11,7 +11,7 @@ Use the model to structure and review a pairwise test model by default. Always u
 
 ## Compatibility
 
-- Requires Node.js and npm access to execute `npx pict-cli`.
+- Requires Node.js and npm access to execute `npx pict-cli@0.2.0`.
 - Treat `pict-cli` execution as mandatory whenever the task asks for generated combinations, pairwise coverage, all-pairs output, or explicit n-wise or t-way coverage.
 - If `pict-cli` cannot be run, stop at the reviewed factors, constraints, and PICT model, and explicitly say the final combinations were not produced because deterministic CLI execution was unavailable.
 
@@ -52,9 +52,9 @@ IF [Browser] = "Safari" THEN [OS] = "macOS";
 - This step is mandatory for any request that asks for concrete combinations or claims about pairwise or n-wise coverage.
 - Use pairwise generation by default.
 - If the user explicitly asks for stronger coverage, check the current `pict-cli` help or documentation for the correct way to request the required n-wise or t-way strength before running the command.
-- Run `npx pict-cli <model-file>`.
-  - When file creation is unnecessary or piping is more convenient, send the model through stdin with `npx pict-cli -`.
-    - Example: `print <model-text> | npx pict-cli -`
+- Run `npx pict-cli@0.2.0 <model-file>`.
+  - When file creation is unnecessary or piping is more convenient, send the model through stdin with `npx pict-cli@0.2.0 -`.
+    - Example: `print <model-text> | npx pict-cli@0.2.0 -`
 - For constraint-heavy models, prefer a quick validation run with the exact quoted constraint text before presenting the final combinations.
 - Treat the CLI output as the only valid source of truth for generated combinations.
 - Keep the exact model text that was executed so the result can be audited or rerun.
