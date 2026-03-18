@@ -1,4 +1,4 @@
-# Pict Constraints Grammar
+# PICT Constraints Grammar
 
 ```
 Constraints     ::=
