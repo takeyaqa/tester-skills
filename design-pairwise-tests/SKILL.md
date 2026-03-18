@@ -54,7 +54,7 @@ IF [Browser] = "Safari" THEN [OS] = "macOS";
 - If the user explicitly asks for stronger coverage, check the current `pict-cli` help or documentation for the correct way to request the required n-wise or t-way strength before running the command.
 - Run `npx pict-cli@0.2.0 <model-file>`.
   - When file creation is unnecessary or piping is more convenient, send the model through stdin with `npx pict-cli@0.2.0 -`.
-    - Example: `printf '%s\n' <model-text> | npx pict-cli@0.2.0 -`
+    - Example: `printf '%s\n' '...model text...' | npx pict-cli@0.2.0 -`
 - For constraint-heavy models, prefer a quick validation run with the exact quoted constraint text before presenting the final combinations.
 - Treat the CLI output as the only valid source of truth for generated combinations.
 - Keep the exact model text that was executed so the result can be audited or rerun.
