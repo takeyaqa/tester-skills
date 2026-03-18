@@ -1,0 +1,82 @@
+[
+  {
+    "query": "I am testing a subscription signup flow and need a concrete pairwise matrix, not just ideas. Please generate all-pairs coverage for these factors: Plan = Free, Pro, Enterprise; Billing cycle = Monthly, Annual; Region = US, EU, JP; Identity provider = EmailPassword, Google, Microsoft; Device = Desktop, iPhone, Android. Constraint: Microsoft sign-in is only offered for Pro and Enterprise.",
+    "should_trigger": true
+  },
+  {
+    "query": "Can you use PICT to build a reviewable model and then generate pairwise combinations for a feature flag rollout? Factors: Environment = Dev, Staging, Prod; Tenant type = Internal, SMB, Enterprise; Auth = Password, SSO; Browser = Chrome, Edge, Safari; Locale = en-US, ja-JP. Constraint: Safari is allowed only for Internal and SMB tenants.",
+    "should_trigger": true
+  },
+  {
+    "query": "My QA lead asked for a t-way interaction table for checkout settings. I need 3-wise coverage for Payment method, Tax mode, Country, Currency, Device, and Promo type, with a few compatibility constraints. Please turn the inputs into a PICT model and give me the generated combinations.",
+    "should_trigger": true
+  },
+  {
+    "query": "We have too many configuration permutations to test manually. Build an all-pairs test pattern from these explicit factors and levels: OS, Browser, Login method, Account tier, and Network type. Also include the rule that Passkey is only supported on Safari and Chrome.",
+    "should_trigger": true
+  },
+  {
+    "query": "I need a pairwise test matrix for an admin console. Use these dimensions exactly as written and call out any bad constraints before generating cases: Role = Viewer, Editor, Owner; Theme = Light, Dark; MFA = Off, SMS, TOTP; Browser = Chrome, Firefox, Safari; Deployment = Cloud, OnPrem.",
+    "should_trigger": true
+  },
+  {
+    "query": "Please create n-wise coverage stronger than pairwise for a mobile sync feature. Factors are Sync mode, Battery state, Connectivity, Account type, and File size bucket. I specifically want 4-way coverage and a deterministic output I can rerun later.",
+    "should_trigger": true
+  },
+  {
+    "query": "Can you take this factor list and produce a concrete combinatorial test matrix with pairwise coverage? I already know the values: Country = JP, US, DE; Currency = JPY, USD, EUR; Fulfillment = Pickup, Delivery; Membership = Guest, Member; Notification = Email, SMS, Push. JP must map to JPY, US to USD, and DE to EUR.",
+    "should_trigger": true
+  },
+  {
+    "query": "I have explicit factors, levels, and a few exclusions for a file import feature. I do not want a generic strategy doc. I want the actual pairwise combinations generated from Source format, Compression, Encoding, Upload channel, and User role, preferably through PICT so the result is reproducible.",
+    "should_trigger": true
+  },
+  {
+    "query": "Help me generate a pairwise regression slice for our login permutations. Inputs: Platform = Web, iOS, Android; Auth = Password, SSO, Passkey; Locale = en, ja, fr; Network = WiFi, 5G, OfflineRecovery. Constraint: OfflineRecovery applies only to mobile apps.",
+    "should_trigger": true
+  },
+  {
+    "query": "I am preparing a test design review and need a compact interaction-coverage table, not exhaustive combinations. Please use PICT and generate pairwise cases for Browser, OS, Screen size, Cookie setting, and Consent banner variant, with Safari restricted to macOS and iOS.",
+    "should_trigger": true
+  },
+  {
+    "query": "I have a large settings page with many options. Can you suggest a test strategy and explain when pairwise testing would be appropriate versus boundary value analysis? I do not need a generated matrix yet.",
+    "should_trigger": false
+  },
+  {
+    "query": "Please review these factors and tell me whether any of my constraints look suspicious before I take this to the QA team. No need to generate combinations, I just want feedback on the model quality.",
+    "should_trigger": false
+  },
+  {
+    "query": "I need exploratory test ideas for a signup wizard that changes based on country, browser, and account type. Focus on risky user journeys, error handling, and data loss scenarios rather than formal combinatorial generation.",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you estimate how many full permutations we would have if we tested every combination of browser, OS, locale, plan, and payment method, and then tell me whether that seems realistic for one sprint?",
+    "should_trigger": false
+  },
+  {
+    "query": "I want boundary-value and equivalence-partitioning test cases for a pricing form with discount percentage, invoice amount, country, and customer tier. Please do not use pairwise generation for this one.",
+    "should_trigger": false
+  },
+  {
+    "query": "Take these test results and summarize which factor interactions seem to be causing the most bugs. The fields happen to be OS, Browser, Login method, and Region, but I am asking for defect analysis, not a new test matrix.",
+    "should_trigger": false
+  },
+  {
+    "query": "I am writing a test plan for API version compatibility. Could you recommend whether pairwise, state-transition, or risk-based testing would make more sense here, and justify the tradeoffs?",
+    "should_trigger": false
+  },
+  {
+    "query": "Please convert this prose spec into a list of test conditions and assumptions. The spec mentions browsers, locales, and account types, but I do not have a finalized factor table or explicit levels yet.",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you create a broad combinatorial analysis of this product surface and point out where interaction complexity is highest? I am not ready for a generated all-pairs table, I want help scoping the problem first.",
+    "should_trigger": false
+  },
+  {
+    "query": "I need a concise QA review of this existing PICT model file. Check whether the constraint syntax looks valid and whether the factor names are readable, but do not run generation or produce a case matrix.",
+    "should_trigger": false
+  }
+]
