@@ -10,6 +10,18 @@
 
 ## Installation
 
+### Using GitHub CLI
+
+Run the following command and follow the prompts to select a skill and target agent:
+
+```bash
+gh skill install takeyaqa/tester-skills
+```
+
+See the [`gh skill install` documentation](https://cli.github.com/manual/gh_skill_install) for options such as `--agent`, `--scope`, and `--all`.
+
+### Using npx
+
 ```bash
 npx skills add takeyaqa/tester-skills
 ```
